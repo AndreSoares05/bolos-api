@@ -203,6 +203,6 @@ O projeto pode futuramente ser integrado a um banco de dados para realizar o arm
 ---
 
 ## 👨‍💻 Autor
-
 Andre Soares
+
 Projeto desenvolvido para fins acadêmicos, com o objetivo de praticar o desenvolvimento de APIs REST utilizando Java e Spring Boot.
