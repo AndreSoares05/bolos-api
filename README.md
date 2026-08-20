@@ -198,7 +198,7 @@ As requisições da API podem ser testadas utilizando ferramentas como:
 
 Atualmente, os dados são armazenados apenas em memória. Isso significa que os bolos cadastrados serão perdidos quando a aplicação for encerrada.
 
-O projeto pode futuramente ser integrado a um banco de dados para realizar o armazenamento permanente das informações.
+O projeto pode futuramente ser integrado a um banco de dados para realizar o armazenamento permanente das informações adquiridas.
 
 ---
 
