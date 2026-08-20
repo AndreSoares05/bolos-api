@@ -202,7 +202,13 @@ O projeto pode futuramente ser integrado a um banco de dados para realizar o arm
 
 ---
 
+
+## Cliente → Controller → Service → Repository → Banco de Dados
+                ↓            ↓            ↓
+            recebe        aplica       acessa
+            requisição    regras       dados
+
+            
 ## 👨‍💻 Autor
 Andre Soares
-
 Projeto desenvolvido para fins acadêmicos, com o objetivo de praticar o desenvolvimento de APIs REST utilizando Java e Spring Boot.
