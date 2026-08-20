@@ -1,54 +1,208 @@
-# API de Cadastro de Bolos
+# 🍰 API Bolos
 
-## Descrição
-API REST simples para cadastro e consulta de bolos. Projeto desenvolvido como
-primeiro trabalho prático com Spring Boot, aplicando os conceitos de
-Controller, Service e Repository.
+API REST desenvolvida em **Java com Spring Boot** para realizar o cadastro e consulta de bolos.
 
-## Tecnologias utilizadas
-- Java 17
-- Spring Boot 3.3.4
-- Maven
+O projeto foi desenvolvido com o objetivo de praticar a organização de uma aplicação utilizando as camadas:
 
-## Endpoints
+**Controller → Service → Repository**
 
-### Listar bolos
+---
 
-GET /bolos
+## 📋 Sobre o projeto
 
-Retorna a lista de bolos já cadastrados.
+A **API Bolos** permite cadastrar bolos e consultar os bolos cadastrados.
 
-### Cadastrar bolo
+Neste primeiro momento, os dados são armazenados em memória utilizando uma lista, não sendo necessário utilizar banco de dados.
 
-POST /bolos
+---
 
-Corpo da requisição (JSON):
+## 🛠️ Tecnologias utilizadas
+
+* Java 21
+* Spring Boot
+* Maven
+* Spring Web
+* VS Code
+* Git e GitHub
+
+---
+
+## 📁 Estrutura do projeto
+
+```text
+src
+└── main
+    └── java
+        └── com.example.api_bolos
+            ├── controller
+            ├── model
+            ├── repository
+            ├── service
+            └── ApiBolosApplication.java
+```
+
+### Camadas
+
+**Model**
+
+Representa os dados do bolo.
+
+**Controller**
+
+Responsável por receber as requisições HTTP da API.
+
+**Service**
+
+Contém a lógica da aplicação e faz a comunicação entre Controller e Repository.
+
+**Repository**
+
+Responsável pelo armazenamento dos bolos em memória.
+
+---
+
+## 🚀 Como executar o projeto
+
+### 1. Pré-requisitos
+
+É necessário ter instalado:
+
+* Java 21
+* Maven
+
+### 2. Executar a aplicação
+
+Abra o projeto no VS Code e execute a classe:
+
+```text
+ApiBolosApplication.java
+```
+
+Também é possível executar pelo terminal:
+
+```bash
+./mvnw spring-boot:run
+```
+
+No Windows:
+
+```bash
+mvnw.cmd spring-boot:run
+```
+
+A aplicação será executada na porta:
+
+```text
+8080
+```
+
+---
+
+## 🌐 Endpoints
+
+### Listar todos os bolos
+
+**GET**
+
+```text
+http://localhost:8080/bolos
+```
+
+Exemplo de resposta:
+
+```json
+[
+  {
+    "id": 1,
+    "nome": "Bolo de Chocolate",
+    "preco": 35.90
+  }
+]
+```
+
+---
+
+### Cadastrar um bolo
+
+**POST**
+
+```text
+http://localhost:8080/bolos
+```
+
+Body da requisição:
+
 ```json
 {
-    "nome": "Bolo de Chocolate",
-    "sabor": "Chocolate",
-    "preco": 45.00
+  "id": 1,
+  "nome": "Bolo de Chocolate",
+  "preco": 35.90
 }
+```
 
+Exemplo de resposta:
 
-## Estrutura do projeto
+```json
+{
+  "id": 1,
+  "nome": "Bolo de Chocolate",
+  "preco": 35.90
+}
+```
 
-src/main/java/com/exemplo/bolos
-├── BolosApplication.java
-├── controller
-│   └── BoloController.java
-├── service
-│   └── BoloService.java
-├── repository
-│   └── BoloRepository.java
-└── model
-    └── Bolo.java
+---
 
+## 🔄 Funcionamento
 
-## Fluxo da aplicação
+O fluxo principal da aplicação funciona da seguinte maneira:
 
-Cliente -> Controller -> Service -> Repository -> Lista em memória
+```text
+Cliente
+   ↓
+Controller
+   ↓
+Service
+   ↓
+Repository
+   ↓
+Lista de bolos
+```
 
-O Controller recebe a requisição HTTP, chama o Service para aplicar as
-regras da aplicação, e o Service usa o Repository para salvar ou consultar
-os bolos, que ficam armazenados em uma lista em memória (sem banco de dados).
+Por exemplo, ao realizar um cadastro:
+
+```text
+POST /bolos
+      ↓
+BoloController
+      ↓
+BoloService
+      ↓
+BoloRepository
+      ↓
+Bolo cadastrado
+```
+
+---
+
+## 🧪 Testes
+
+As requisições da API podem ser testadas utilizando ferramentas como:
+
+* Thunder Client
+* Postman
+* Insomnia
+
+---
+
+## 📌 Observações
+
+Atualmente, os dados são armazenados apenas em memória. Isso significa que os bolos cadastrados serão perdidos quando a aplicação for encerrada.
+
+O projeto pode futuramente ser integrado a um banco de dados para realizar o armazenamento permanente das informações.
+
+---
+
+## 👨‍💻 Autor
+Andre Soares
+
+Projeto desenvolvido para fins acadêmicos, com o objetivo de praticar o desenvolvimento de APIs REST utilizando Java e Spring Boot.
